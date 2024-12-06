@@ -33,7 +33,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV /home/dalir/Documents/cdt/diagnostics_lab/mcf/thompson_scattering/src/.venv
+set -gx VIRTUAL_ENV /home/dalir/Documents/cdt/diagnostics_lab/mcf/diagnostics_lab/thompson_scattering/src/.venv
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/"bin $PATH

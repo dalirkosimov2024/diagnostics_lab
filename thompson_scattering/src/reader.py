@@ -17,8 +17,8 @@ R = np.loadtxt(f"{path}/radius.dat")
 
 if plot == "yes":
     plt.imshow(I)
-    plt.xlabel("Wavelength (Angstrom)")
-    plt.ylabel("Spatial position (Angstrom)")
+    plt.xlabel("Wavelength (a.u.)")
+    plt.ylabel("Spatial position (a.u.)")
     plt.show()
 
 
@@ -149,9 +149,10 @@ def plot_looper(i,R, T_e_values):
             super_error = np.sqrt(np.diag(pcov))
 
             if n ==3:
+
                 plt.plot(R, supergaussian_fit, label=f"\nRank: {n}\n"
-                         r"$T_{e,MAX}$ = "f"{round(popt[0],2)}\n"
-                         r"$\sigma_R$ = "f"{round(np.abs(popt[2]),2)}\n")
+                         r"$T_{e,MAX}$ = "f"{round(popt[0],2)}" r" $\pm$ "f"{round(super_error[0],2)} eV\n"
+                         r"$\sigma_R$ = "f"{round(np.abs(popt[2]),3)}" r" $\pm$ " f"{round(super_error[2],3)} m\n")
             else:
                 plt.plot(R, supergaussian_fit, label=str(f"Rank: {n}"))
 
